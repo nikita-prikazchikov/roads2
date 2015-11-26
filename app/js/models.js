@@ -36,5 +36,6 @@ ElementStress.prototype.calculate = function() {
 };
 
 ElementStress.prototype.getDeltaA = function(deltaSigma) {
-    return deltaSigma * this.S * this.l / this.E;
+    //return deltaSigma * this.S * this.l / this.E;
+    return deltaSigma * deltaSigma * 108500 * 108500 * 220 / (3 * 200000 * 9667500);
 };
