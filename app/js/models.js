@@ -5,7 +5,7 @@ function ElementStress(stress){
     this.S = stress.S;
     this.A = 0;
     this.work = [];
-    this.k = 108500 * 108500 * 220 / (3 * 200000 * 9667500);
+    this.k = 108500 * 108500 * 220 / (2 * 3 * 200000 * 9667500); // added 1/2
 }
 
 ElementStress.prototype.calculate = function() {
@@ -29,7 +29,7 @@ ElementStress.prototype.calculate = function() {
 //            console.log("near zero: s[i]: " + s1 + " s[i+1]: " + s2 + " work: " + ai);
         }
         else {
-            console.log("not included: s[i]: " + s1 + " s[i+1]: " + s2 + " work: " + ai);
+//            console.log("not included: s[i]: " + s1 + " s[i+1]: " + s2 + " work: " + ai);
         }
         this.A += ai;
         this.work.push(ai);

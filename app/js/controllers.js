@@ -19,6 +19,7 @@ roadControllers.controller('RoadCtrl', ['$scope', '$routeParams',
 
         $scope.stresses = new ElementStress(roads[$routeParams.roadId]);
 
+        $scope.road = roads[$routeParams.roadId];
         $scope.stresses.calculate();
 //        $scope.base = 10;
 //        $scope.results = [];
