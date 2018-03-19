@@ -19,6 +19,6 @@ roadApp.config(['$routeProvider',
                 controller: 'RoadCtrl'
             }).
             otherwise({
-                redirectTo: '/#'
+                redirectTo: '/'
             });
     }]);

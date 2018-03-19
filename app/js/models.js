@@ -2,10 +2,11 @@ function ElementStress(stress){
     this.stress = stress.coordinates;
     this.E = stress.E;
     this.l = stress.l;
-    this.S = stress.S;
+    this.W = stress.W;
+    this.J = stress.J;
     this.A = 0;
     this.work = [];
-    this.k = 108500 * 108500 * 220 / (2 * 3 * 200000 * 9667500); // added 1/2
+    this.k = this.W * this.W * this.l / (2 * 3 * this.E * this.J);
 }
 
 ElementStress.prototype.calculate = function() {
