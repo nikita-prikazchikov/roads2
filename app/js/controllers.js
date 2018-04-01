@@ -5,16 +5,16 @@
 var roadControllers = angular.module('roadControllers', []);
 
 roadControllers.controller('DefaultCtrl', ['$scope',
-    function($scope) {
+    function ($scope) {
         $scope.roads = roads;
     }]);
 
 roadControllers.controller('RoadCtrl', ['$scope', '$routeParams',
-    function($scope, $routeParams) {
-        $scope.visible ={
-            coordinates : false,
-            correlation : false,
-            results : true
+    function ($scope, $routeParams) {
+        $scope.visible = {
+            coordinates: false,
+            correlation: false,
+            results: true
         };
 
         $scope.stresses = new ElementStress(roads[$routeParams.roadId]);
@@ -49,4 +49,17 @@ roadControllers.controller('RoadCtrl', ['$scope', '$routeParams',
 //                $scope.results.push(smoothedRoad);
 //            }
 //        };
+    }]);
+
+roadControllers.controller('WorkCalcCtrl', ['$scope', '$routeParams',
+    function ($scope, $routeParams) {
+        $scope.roads = roads;
+        for( var road in roads){
+            if(roads.hasOwnProperty(road)){
+                roads[road].stress = new ElementStress(roads[road]);
+                roads[road].stress.calculate();
+            }
+        }
+        //$scope.stresses = new ElementStress(roads[$routeParams.roadId]);
+        //$scope.stresses.calculate();
     }]);

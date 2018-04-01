@@ -18,6 +18,10 @@ roadApp.config(['$routeProvider',
                 templateUrl: 'partials/road.html',
                 controller: 'RoadCtrl'
             }).
+            when('/workCalc', {
+                templateUrl: 'partials/roads_calculation.html',
+                controller: 'WorkCalcCtrl'
+            }).
             otherwise({
                 redirectTo: '/'
             });

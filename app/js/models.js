@@ -1,9 +1,9 @@
-function ElementStress(stress){
-    this.stress = stress.coordinates;
-    this.E = stress.E;
-    this.l = stress.l;
-    this.W = stress.W;
-    this.J = stress.J;
+function ElementStress(road){
+    this.stress = road.coordinates;
+    this.E = road.E;
+    this.l = road.l;
+    this.W = road.W;
+    this.J = road.J;
     this.A = 0;
     this.work = [];
     this.k = this.W * this.W * this.l / (2 * 3 * this.E * this.J);
@@ -33,7 +33,7 @@ ElementStress.prototype.calculate = function() {
 //            console.log("not included: s[i]: " + s1 + " s[i+1]: " + s2 + " work: " + ai);
         }
         this.A += ai;
-        this.work.push(ai);
+        //this.work.push(ai);
     }
 };
 
